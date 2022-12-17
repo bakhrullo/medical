@@ -16,8 +16,8 @@
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
         $result = curl_exec($ch);
-        $sec_res = json_decode($result, true);
+        // $sec_res = json_decode($result, true);
         curl_close($ch);
-        return $sec_res;
+        return $result;
     }
 ?>

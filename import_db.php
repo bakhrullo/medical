@@ -1,5 +1,6 @@
 <?
-    function api_to_sql($servername, $username, $password, $dbname) {  
+    function api_to_sql() {  
+        include 'database.php';
         ini_set('max_execution_time', 1020);
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
@@ -64,9 +65,9 @@
                     $stmt->close();
                 }
 
-            $limit = $limit + 500;
-            $offset = $offset + 500;
-            sleep(1);
+                $limit += 500;
+                $offset += 500;
+                sleep(1);
         }
     }
 ?>

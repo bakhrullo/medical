@@ -93,10 +93,10 @@
                           <td class="col-md-3 text-right font-weight-600">наименование фармакотерапевтической группы</td>
                           <td class="col-md-9"><?= $value['pharmacotherapeutic_group']; ?></td>
                        </tr>
-                       <tr>
+                      <!--  <tr>
                           <td class="col-md-3 text-right font-weight-600">дата регистрации</td>
                           <td class="col-md-9"><?= $value['reg_date']; ?></td>
-                       </tr>
+                       </tr> -->
                        <tr>
                           <td class="col-md-3 text-right font-weight-600">код фармакотерапевтической группы</td>
                           <td class="col-md-9"><?= $value['pharmacotherapeutic_group_code']; ?></td>

@@ -13,6 +13,7 @@
     <title>Список</title>
   </head>
 <body>
+    <a href="db_update.php"><h1>afwefw</h1></a>
     <?php
         session_start();
 
@@ -45,25 +46,27 @@
             //here goes the data
         }
         mysqli_close($conn);
-    ?>
-    <ul class="pagination">
-        <li><a href="?pageno=1">Первый</a></li>
-        <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
-            <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Предыдуший</a>
-        </li>
-        <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Следующий</a>
-        </li>
-        <li><a href="?pageno=<?php echo $total_pages; ?>">Последний</a></li>
-    </ul>
+   
 
+    
+ ?>
+        <ul class="pagination">
+            <li><a href="?pageno=1">Первый</a></li>
+            <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Предыдуший</a>
+            </li>
+            <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Следующий</a>
+            </li>
+            <li><a href="?pageno=<?php echo $total_pages; ?>">Последний</a></li>
+        </ul>
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
                 <form method="post">
                     <select name="limit-records" id="limit-records">
                         <option disabled="disabled" selected="selected">---ЛИМИТЫ---</option>
-                          <?php foreach([10,100,500,1000,5000] as $limit): ?>
+                          <?php foreach([25,50,100] as $limit): ?>
                             <option <?php if( isset($_SESSION["limit"]) && $_SESSION["limit"] == $limit ) echo "selected" ?> value="<?= $limit; ?>"><?= $limit; ?></option>
                           <?php endforeach; ?>
                     </select>
